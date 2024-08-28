@@ -117,6 +117,7 @@ const page = () => {
       <AccordionDemo />
       <BadgeDemo />
       <ContextMenuDemo/>
+      <DataTableDemo/>
     </div>
   );
 };
@@ -245,6 +246,7 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
+import { DataTableDemo } from "@/components/DataTableDemo";
 
 export function ContextMenuDemo() {
   return (
