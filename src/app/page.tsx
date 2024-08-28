@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
@@ -125,6 +126,7 @@ const page = () => {
       <SheetDemo/>
       <SelectDemo/>
       <ResizableDemo/>
+      <ProgressDemo/>
     </div>
   );
 };
@@ -418,8 +420,6 @@ export function SheetDemo() {
   )
 }
 
-import * as React from "react"
-
 import {
   Select,
   SelectContent,
@@ -486,3 +486,17 @@ export function ResizableDemo() {
     </ResizablePanelGroup>
   )
 }
+
+import { Progress } from "@/components/ui/progress"
+
+export function ProgressDemo() {
+  const [progress, setProgress] = React.useState(13)
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  return <Progress value={progress} className="w-[60%]" />
+}
+
