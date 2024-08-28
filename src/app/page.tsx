@@ -132,6 +132,7 @@ const page = () => {
       <MenubarDemo/>
       <LabelDemo/>
       <InputOTPDemo/>
+      <InputDemo/>
     </div>
   );
 };
@@ -744,4 +745,8 @@ export function InputOTPDemo() {
       </InputOTPGroup>
     </InputOTP>
   )
+}
+
+export function InputDemo() {
+  return <Input type="email" placeholder="Email" />
 }
