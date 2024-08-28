@@ -47,7 +47,7 @@ import { Separator } from "@/components/ui/separator";
 
 const page = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 m-6">
       <h1 className="text-red-500 font-bold w-[90%] m-auto flex items-center justify-center">
         Sanjoy
       </h1>
@@ -108,16 +108,16 @@ const page = () => {
       >
         Show Toast
       </Button>
-
       <AlertDialogDemo />
       <AvatarDemo />
-      <TabsDemo />
+      <TabsDemo /> 
       <TooltipDemo />
       <ScrollAreaDemo />
       <AccordionDemo />
       <BadgeDemo />
       <ContextMenuDemo/>
       <DataTableDemo/>
+      <TextareaDemo/>
     </div>
   );
 };
@@ -298,4 +298,10 @@ export function ContextMenuDemo() {
       </ContextMenuContent>
     </ContextMenu>
   );
+}
+
+import { Textarea } from "@/components/ui/textarea"
+
+export function TextareaDemo() {
+  return <Textarea placeholder="Type your message here." />
 }
