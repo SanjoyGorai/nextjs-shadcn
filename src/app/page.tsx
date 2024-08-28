@@ -136,11 +136,25 @@ const page = () => {
       <HoverCardDemo/>
       <DrawerDemo/>
       <CarouselDemo/>
+      <CalendarDemo/>
     </div>
   );
 };
 
 export default page;
+
+export function CalendarDemo() {
+  const [date, setDate] = React.useState<Date | undefined>(new Date())
+ 
+  return (
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className="rounded-md border"
+    />
+  )
+}
 
 import { Card, CardContent } from "@/components/ui/card"
 import {
