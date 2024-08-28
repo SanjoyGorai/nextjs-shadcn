@@ -111,33 +111,34 @@ const page = () => {
       </Button>
       <AlertDialogDemo />
       <AvatarDemo />
-      <TabsDemo /> 
+      <TabsDemo />
       <TooltipDemo />
       <ScrollAreaDemo />
       <AccordionDemo />
       <BadgeDemo />
-      <ContextMenuDemo/>
-      <DataTableDemo/>
-      <TextareaDemo/>
-      <SwitchDemo/>
-      <SliderDemo/>
-      <SkeletonDemo/>
-      <SkeletonCard/>
-      <SheetDemo/>
-      <SelectDemo/>
-      <ResizableDemo/>
-      <ProgressDemo/>
-      <PopoverDemo/>
-      <PaginationDemo/>
-      <MenubarDemo/>
-      <LabelDemo/>
-      <InputOTPDemo/>
-      <InputDemo/>
-      <HoverCardDemo/>
-      <DrawerDemo/>
-      <CarouselDemo/>
-      <CalendarDemo/>
-      <BreadcrumbDemo/>
+      <ContextMenuDemo />
+      <DataTableDemo />
+      <TextareaDemo />
+      <SwitchDemo />
+      <SliderDemo />
+      <SkeletonDemo />
+      <SkeletonCard />
+      <SheetDemo />
+      <SelectDemo />
+      <ResizableDemo />
+      <ProgressDemo />
+      <PopoverDemo />
+      <PaginationDemo />
+      <MenubarDemo />
+      <LabelDemo />
+      <InputOTPDemo />
+      <InputDemo />
+      <HoverCardDemo />
+      <DrawerDemo />
+      <CarouselDemo />
+      <CalendarDemo />
+      <BreadcrumbDemo />
+      <RadioGroupDemo/>
     </div>
   );
 };
@@ -152,7 +153,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@/components/ui/breadcrumb";
 
 export function BreadcrumbDemo() {
   return (
@@ -185,13 +186,12 @@ export function BreadcrumbDemo() {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }
 
-
 export function CalendarDemo() {
-  const [date, setDate] = React.useState<Date | undefined>(new Date())
- 
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
+
   return (
     <Calendar
       mode="single"
@@ -199,18 +199,18 @@ export function CalendarDemo() {
       onSelect={setDate}
       className="rounded-md border"
     />
-  )
+  );
 }
 
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
- 
+} from "@/components/ui/carousel";
+
 export function CarouselDemo() {
   return (
     <Carousel className="w-full max-w-xs">
@@ -230,11 +230,11 @@ export function CarouselDemo() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
+  );
 }
 
-import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
-import { Bar, BarChart, ResponsiveContainer } from "recharts" 
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
+import { Bar, BarChart, ResponsiveContainer } from "recharts";
 import {
   Drawer,
   DrawerClose,
@@ -244,7 +244,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/components/ui/drawer";
 
 const data = [
   {
@@ -286,13 +286,13 @@ const data = [
   {
     goal: 349,
   },
-]
+];
 
 export function DrawerDemo() {
-  const [goal, setGoal] = React.useState(350)
+  const [goal, setGoal] = React.useState(350);
 
   function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)))
+    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
   }
 
   return (
@@ -362,16 +362,15 @@ export function DrawerDemo() {
         </div>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }
 
-
-import { CalendarIcon } from "@radix-ui/react-icons" 
+import { CalendarIcon } from "@radix-ui/react-icons";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 
 export function HoverCardDemo() {
   return (
@@ -400,9 +399,8 @@ export function HoverCardDemo() {
         </div>
       </HoverCardContent>
     </HoverCard>
-  )
+  );
 }
-
 
 export function AlertDialogDemo() {
   return (
@@ -461,12 +459,12 @@ export function ScrollAreaDemo() {
       <div className="p-4">
         <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
         {tags.map((tag) => (
-          <>
+          <div key={tag}>
             <div key={tag} className="text-sm">
               {tag}
             </div>
             <Separator className="my-2" />
-          </>
+          </div>
         ))}
       </div>
     </ScrollArea>
@@ -580,14 +578,14 @@ export function ContextMenuDemo() {
   );
 }
 
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
 
 export function TextareaDemo() {
-  return <Textarea placeholder="Type your message here." />
+  return <Textarea placeholder="Type your message here." />;
 }
 
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 export function SwitchDemo() {
   return (
@@ -595,13 +593,13 @@ export function SwitchDemo() {
       <Switch id="airplane-mode" />
       <Label htmlFor="airplane-mode">Airplane Mode</Label>
     </div>
-  )
+  );
 }
 
-import { cn } from "@/lib/utils"
-import { Slider } from "@/components/ui/slider"
+import { cn } from "@/lib/utils";
+import { Slider } from "@/components/ui/slider";
 
-type SliderProps = React.ComponentProps<typeof Slider>
+type SliderProps = React.ComponentProps<typeof Slider>;
 
 export function SliderDemo({ className, ...props }: SliderProps) {
   return (
@@ -612,10 +610,10 @@ export function SliderDemo({ className, ...props }: SliderProps) {
       className={cn("w-[60%]", className)}
       {...props}
     />
-  )
+  );
 }
 
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function SkeletonDemo() {
   return (
@@ -626,9 +624,8 @@ export function SkeletonDemo() {
         <Skeleton className="h-4 w-[200px]" />
       </div>
     </div>
-  )
+  );
 }
-
 
 export function SkeletonCard() {
   return (
@@ -639,10 +636,10 @@ export function SkeletonCard() {
         <Skeleton className="h-4 w-[200px]" />
       </div>
     </div>
-  )
+  );
 }
 
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 import {
   Sheet,
   SheetClose,
@@ -652,7 +649,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 
 export function SheetDemo() {
   return (
@@ -688,7 +685,7 @@ export function SheetDemo() {
         </SheetFooter>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
 
 import {
@@ -699,7 +696,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export function SelectDemo() {
   return (
@@ -718,14 +715,14 @@ export function SelectDemo() {
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  );
 }
 
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/components/ui/resizable"
+} from "@/components/ui/resizable";
 
 export function ResizableDemo() {
   return (
@@ -755,26 +752,26 @@ export function ResizableDemo() {
         </ResizablePanelGroup>
       </ResizablePanel>
     </ResizablePanelGroup>
-  )
+  );
 }
 
-import { Progress } from "@/components/ui/progress"
+import { Progress } from "@/components/ui/progress";
 
 export function ProgressDemo() {
-  const [progress, setProgress] = React.useState(13)
+  const [progress, setProgress] = React.useState(13);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setProgress(66), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
-  return <Progress value={progress} className="w-[60%]" />
+  return <Progress value={progress} className="w-[60%]" />;
 }
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 export function PopoverDemo() {
   return (
@@ -827,7 +824,7 @@ export function PopoverDemo() {
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
 
 import {
@@ -838,7 +835,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from "@/components/ui/pagination";
 
 export function PaginationDemo() {
   return (
@@ -866,7 +863,7 @@ export function PaginationDemo() {
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  )
+  );
 }
 
 import {
@@ -883,7 +880,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@/components/ui/menubar"
+} from "@/components/ui/menubar";
 
 export function MenubarDemo() {
   return (
@@ -974,9 +971,9 @@ export function MenubarDemo() {
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
-  )
+  );
 }
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox } from "@/components/ui/checkbox";
 export function LabelDemo() {
   return (
     <div>
@@ -985,14 +982,14 @@ export function LabelDemo() {
         <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>
     </div>
-  )
+  );
 }
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from "@/components/ui/input-otp";
 import { Calendar } from "@/components/ui/calendar";
 
 export function InputOTPDemo() {
@@ -1010,9 +1007,29 @@ export function InputOTPDemo() {
         <InputOTPSlot index={5} />
       </InputOTPGroup>
     </InputOTP>
-  )
+  );
 }
 
 export function InputDemo() {
-  return <Input type="email" placeholder="Email" />
+  return <Input type="email" placeholder="Email" />;
+}
+
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+export function RadioGroupDemo() {
+  return (
+    <RadioGroup defaultValue="comfortable">
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="default" id="r1" />
+        <Label htmlFor="r1">Default</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="comfortable" id="r2" />
+        <Label htmlFor="r2">Comfortable</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="compact" id="r3" />
+        <Label htmlFor="r3">Compact</Label>
+      </div>
+    </RadioGroup>
+  )
 }
