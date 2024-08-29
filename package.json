@@ -2,6 +2,7 @@
   "name": "next-shadcn",
   "version": "0.1.0",
   "private": true,
+  "author": "Sanjoy Gorai",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

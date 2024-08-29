@@ -138,17 +138,16 @@ const page = () => {
       <CarouselDemo />
       <CalendarDemo />
       <BreadcrumbDemo />
-      <RadioGroupDemo/>
-      <CommandDemo/>
-      <ComboboxDemo/>
+      <RadioGroupDemo />
+      <CommandDemo />
+      <ComboboxDemo />
     </div>
   );
 };
 
 export default page;
 
-
-import { Check, ChevronsUpDown } from "lucide-react"
+import { Check, ChevronsUpDown } from "lucide-react";
 const frameworks = [
   {
     value: "next.js",
@@ -170,10 +169,10 @@ const frameworks = [
     value: "astro",
     label: "Astro",
   },
-]
+];
 export function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -201,8 +200,8 @@ export function ComboboxDemo() {
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
+                    setValue(currentValue === value ? "" : currentValue);
+                    setOpen(false);
                   }}
                 >
                   <Check
@@ -219,18 +218,10 @@ export function ComboboxDemo() {
         </Command>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
 
-
-
-import {
-  Calculator,
-  CreditCard,
-  Settings,
-  Smile,
-  User,
-} from "lucide-react"
+import { Calculator, CreditCard, Settings, Smile, User } from "lucide-react";
 
 import {
   Command,
@@ -241,7 +232,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 
 export function CommandDemo() {
   return (
@@ -283,9 +274,8 @@ export function CommandDemo() {
         </CommandGroup>
       </CommandList>
     </Command>
-  )
+  );
 }
-
 
 import {
   Breadcrumb,
@@ -1156,7 +1146,7 @@ export function InputDemo() {
   return <Input type="email" placeholder="Email" />;
 }
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 export function RadioGroupDemo() {
   return (
     <RadioGroup defaultValue="comfortable">
@@ -1173,5 +1163,5 @@ export function RadioGroupDemo() {
         <Label htmlFor="r3">Compact</Label>
       </div>
     </RadioGroup>
-  )
+  );
 }
